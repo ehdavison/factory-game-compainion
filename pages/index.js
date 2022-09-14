@@ -1,7 +1,5 @@
-import { redirect } from 'next/dist/server/api-utils'
-import { Flex, Text, Box } from '../components/ui'
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
+import { Box, Text } from '../components/ui'
+import Layout from '../components/ui/layout'
 import Navbar from '../components/ui/navbar'
 
 export default function Home() {
@@ -9,11 +7,12 @@ export default function Home() {
 
 
   return (
-    <Box w='100%'>
-      <Navbar />
-      <Box w='100%' h='auto' bgColor='blue'>
-        
+    <Layout>
+      <Box w='100%'>
+        <Box w='100%' h='auto'>
+          <Text>MY BIG PEACH</Text>
+        </Box>
       </Box>
-    </Box>
+    </Layout>
   )
 }
