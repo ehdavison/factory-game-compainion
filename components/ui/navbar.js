@@ -11,21 +11,22 @@ const Navbar = () => {
             value: '/',
         },
         {
-            id: 'home',
-            text: 'Home',
-            value: '/',
+            id: 'signin',
+            text: 'Log In',
+            value: '/signin',
         },
         {
-            id: 'home',
-            text: 'Home',
-            value: '/',
+            id: 'signup',
+            text: 'Sign Up',
+            value: '/signup',
         }
     ]
     return (
-        <Flex h='5em' w='100%' bgColor='blue' alignItems='center'>
+        <Flex h='5em' w='100%' bgColor='#4F5A5D' alignItems='center'>
             {tabs.map(tab => {
                 return (
-                    <Button 
+                    <Button
+                        bgColor='#F5D701' 
                         onClick={() => router.push(tab.value)}
                     >
                         {tab.text}
