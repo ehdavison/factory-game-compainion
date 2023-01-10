@@ -105,19 +105,25 @@
             "name": "Iron Ore",
             "key_name": "iron-ore",
             "tier": -1,
-            "stack_size": 100
+            "stack_size": 100,
+            "image": "iron_ore.webp",
+            "base_material": true
         },
         {
             "name": "Copper Ore",
             "key_name": "copper-ore",
             "tier": 0,
-            "stack_size": 100
+            "stack_size": 100,
+            "image": "copper_ore.webp",
+            "base_material": true
         },
         {
             "name": "Coal",
             "key_name": "coal",
             "tier": 3,
-            "stack_size": 100
+            "stack_size": 100,
+            "image": "coal.webp",
+            "base_material": true
         },
         {
             "name": "Iron Ingot",
@@ -183,7 +189,9 @@
             "name": "Limestone",
             "key_name": "limestone",
             "tier": 0,
-            "stack_size": 100
+            "stack_size": 100,
+            "image": "limestone.webp",
+            "base_material": true
         },
         {
             "name": "Screw",
@@ -315,7 +323,9 @@
             "name": "Caterium Ore",
             "key_name": "caterium-ore",
             "tier": 3,
-            "stack_size": 100
+            "stack_size": 100,
+            "image": "caterium_ore.webp",
+            "base_material": true
         },
         {
             "name": "Caterium Ingot",
@@ -375,7 +385,9 @@
             "name": "Raw Quartz",
             "key_name": "raw-quartz",
             "tier": 4,
-            "stack_size": 100
+            "stack_size": 100,
+            "image": "raw_quartz.webp",
+            "base_material": true
         },
         {
             "name": "Quartz Crystal",
@@ -393,7 +405,9 @@
             "name": "Sulfur",
             "key_name": "sulfur",
             "tier": 4,
-            "stack_size": 100
+            "stack_size": 100,
+            "image": "sulfur.webp",
+            "base_material": true
         },
         {
             "name": "Black Powder",
@@ -441,7 +455,9 @@
             "name": "Bauxite",
             "key_name": "bauxite",
             "tier": 7,
-            "stack_size": 100
+            "stack_size": 100,
+            "image": "bauxite.webp",
+            "base_material": true
         },
         {
             "name": "Aluminum Ingot",
@@ -483,7 +499,9 @@
             "name": "Uranium",
             "key_name": "uranium",
             "tier": 7,
-            "stack_size": 100
+            "stack_size": 100,
+            "image": "uranium.webp",
+            "base_material": true
         },
         {
             "name": "Uranium Cell",

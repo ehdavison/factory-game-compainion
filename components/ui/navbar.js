@@ -28,6 +28,8 @@ const Navbar = () => {
                     <Button
                         bgColor='#F5D701' 
                         onClick={() => router.push(tab.value)}
+                        mx='0.5em'
+                        key={tab.id}
                     >
                         {tab.text}
                     </Button>

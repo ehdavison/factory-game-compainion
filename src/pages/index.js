@@ -1,12 +1,13 @@
-import { Box, Text, Input, Flex, Popover, PopoverTrigger, PopoverContent, Button, Stack, StackDivider } from '../components/ui'
-import Layout from '../components/ui/layout'
-import Navbar from '../components/ui/navbar'
-import Card from '../components/card'
-import cardLibrary from '../public/factory-data/data.json'
+import { Box, Text, Input, Flex, Popover, PopoverTrigger, PopoverContent, Button, Stack, StackDivider, Image } from '../../components/ui'
+import Layout from '../../components/ui/layout'
+import Navbar from '../../components/ui/navbar'
+import Card from '../../components/card'
+import cardLibrary from '../../public/factory-data/data.json'
 import { useMemo, useRef, useState } from 'react'
-import { flatten } from 'ramda'
+import { filter, flatten, pathEq, pathOr } from 'ramda'
 import Scrollbars from 'react-custom-scrollbars'
-import { useOutsideClick } from '@chakra-ui/react'
+import { HStack, useOutsideClick } from '@chakra-ui/react'
+
 
 export default function Home() {
 
@@ -18,6 +19,16 @@ export default function Home() {
     const list = flatten(items, recipes)
     return list
   },[cardLibrary])
+
+  const baseMaterialsList = useMemo(() => {
+    const items = filter(item => {
+      return item?.base_material === true
+    }, itemsList)
+    return items
+  }, [itemsList])
+  
+
+
 
   const popoverRef = useRef()
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -54,6 +65,8 @@ export default function Home() {
                   <Stack divider={<StackDivider />}>
                       {itemsList?.map((item, i) => {
                         return (
+                          // includes from ramda will narrow down the list
+                          // https://ramdajs.com/docs/#includes
                           <Box textAlign='center' key={item.name}>
                             <Text>
                               {item.name}
@@ -66,6 +79,22 @@ export default function Home() {
               </Box>
             </PopoverContent>
           </Popover>
+
+          <Flex w='100%' h='auto' border='solid navy 4px' borderRadius='10px' p='1em' my='3em'>
+            <HStack h='100%'>
+              {baseMaterialsList?.map((item, i) => {
+                const { image } = item
+                return (
+                  <Box>
+                    <Image
+                    src={`factory-data/static/base_materials/${image}`}
+                    alt='base_material_image'
+                    />
+                  </Box>
+                )
+              })}
+            </HStack>
+          </Flex>
           {/* {cardLibrary?.resources.map((card, i) => {
             return (
               <Card card={card} />
