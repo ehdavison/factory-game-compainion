@@ -31,67 +31,37 @@ export default function Home() {
 
 
 
-  const popoverRef = useRef()
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  useOutsideClick({
-    ref: popoverRef,
-    handler: () => setIsModalOpen(false),
-  })
+  
 
   return (
     <Layout>
       <Flex w='100%' justifyContent='center'>
         <Box w='70%' h='auto' py='5em'>
-          <Popover
-            autoFocus={false}
-            isOpen={isModalOpen}
-            onOpen={() => {
-              setIsModalOpen(true)
-            }}
-            onClose={() => {
-              setIsModalOpen(false)
-            }}
-          >
-            <PopoverTrigger
-            onClick={() => {
-              setIsModalOpen(!isModalOpen)
+          
 
-            }}
+            <Flex 
+                w='100%' 
+                h='auto' 
+                bgColor='white' 
+                borderRadius='10px' 
+                p='1em' 
+                my='3em'
+                boxShadow='base'
             >
-              <Input></Input>
-            </PopoverTrigger>
-            <PopoverContent ref={popoverRef}>
-              <Box h='35em'>
-                <Scrollbars>
-                  <Stack divider={<StackDivider />}>
-                      {itemsList?.map((item, i) => {
-                        return (
-                          // includes from ramda will narrow down the list
-                          // https://ramdajs.com/docs/#includes
-                          <Box textAlign='center' key={item.name}>
-                            <Text>
-                              {item.name}
-                            </Text>
-                          </Box>
-                        )
-                      })}
-                  </Stack>
-                </Scrollbars>
-              </Box>
-            </PopoverContent>
-          </Popover>
-
-          <Flex w='100%' h='auto' border='solid navy 4px' borderRadius='10px' p='1em' my='3em'>
             <HStack h='100%'>
               {baseMaterialsList?.map((item, i) => {
                 const { image } = item
                 return (
                   <Box
                     _hover={{
-                      background: 'grey',
+                      background: 'blue.100',
                     }}
                     onClick={() => setSelectedMaterial(item)}
                     cursor='pointer'
+                    border='2px solid'
+                    borderColor={selectedMaterial === item ? 'blue.500' : 'transparent'}
+                    p='2'
+                    rounded='8'
                   >
                     <Image
                     src={`factory-data/static/base_materials/${image}`}
@@ -107,9 +77,9 @@ export default function Home() {
               <Card card={card} />
             )
           })} */}
-          <Flex w='100%' h='auto'>
+          <Box h='auto' boxShadow='base'>
             <MaterialCollapse material={selectedMaterial}/>
-          </Flex>
+          </Box>
       
         </Box>
       </Flex>
