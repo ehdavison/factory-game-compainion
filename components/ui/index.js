@@ -7,6 +7,7 @@ export {
     Box,
     Button,
     Container,
+    Collapse,
     Flex,
     Grid,
     GridItem,

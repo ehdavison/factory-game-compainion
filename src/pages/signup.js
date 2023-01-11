@@ -1,6 +1,6 @@
 import React from 'react';
-import Layout from '../components/ui/layout'
-import { Box, Text } from '../components/ui'
+import Layout from '../../components/ui/layout'
+import { Box, Text } from '../../components/ui'
 
 const Signup = () => {
     return (

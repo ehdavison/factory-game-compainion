@@ -7,11 +7,12 @@ import { useMemo, useRef, useState } from 'react'
 import { filter, flatten, pathEq, pathOr } from 'ramda'
 import Scrollbars from 'react-custom-scrollbars'
 import { HStack, useOutsideClick } from '@chakra-ui/react'
+import MaterialCollapse from '../../components/materialCollapse'
 
 
 export default function Home() {
 
-
+  const [selectedMaterial, setSelectedMaterial] = useState(null);
   
   const itemsList = useMemo(() => {
     const items = cardLibrary.items
@@ -85,7 +86,13 @@ export default function Home() {
               {baseMaterialsList?.map((item, i) => {
                 const { image } = item
                 return (
-                  <Box>
+                  <Box
+                    _hover={{
+                      background: 'grey',
+                    }}
+                    onClick={() => setSelectedMaterial(item)}
+                    cursor='pointer'
+                  >
                     <Image
                     src={`factory-data/static/base_materials/${image}`}
                     alt='base_material_image'
@@ -100,6 +107,9 @@ export default function Home() {
               <Card card={card} />
             )
           })} */}
+          <Flex w='100%' h='auto'>
+            <MaterialCollapse material={selectedMaterial}/>
+          </Flex>
       
         </Box>
       </Flex>
