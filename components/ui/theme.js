@@ -7,7 +7,7 @@ const theme = extendTheme({
             50: '#F6F8FE',
             75: '#fafaff',
             100: '#f2f7f9',
-            150: '#F1F1F1',
+            150: '#F3F3F9',
             200: '#E1EDF2',
             300: '#D4DEE6',
             400: '#C5D1D9',
@@ -116,3 +116,5 @@ const theme = extendTheme({
         },
     }
 })
+
+export default theme;

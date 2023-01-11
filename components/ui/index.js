@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 export {
     Accordion,
     AccordionItem,
@@ -87,3 +89,5 @@ export {
     DrawerBody,
     DrawerFooter,
 } from '@chakra-ui/react'
+
+export const Icon = ({ icon, ...rest }) => <FontAwesomeIcon icon={icon} fixedWidth {...rest} />;

@@ -4,7 +4,7 @@ import { Box } from '../ui'
 
 const Layout = ({ children }) => {
     return (
-        <Box boxSize='100%' bg='gray.50'>
+        <Box boxSize='100%' bgColor='gray.150' h='100vh' w='100vw'>
             <Box w='100%'>
                 <Navbar />
                 {children}
